@@ -1,4 +1,13 @@
+@font-face {
+  font-family: norse-bold;
+  src: url(../fonts/Norse-Bold.otf);
+}
+
 :root {
+  --secondary-color: #ffffff;
+  --fern-bg: url(../img/fern.jpg) no-repeat;
+  --transparent-bg: rgba(0, 0, 0, 0.464);
+  --logo-font: norse-bold, sans-serif;
   --system-ui: system-ui, "Segoe UI", Roboto,
     Helvetica, Arial, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol";
@@ -19,4 +28,57 @@ body {
 input,
 button {
   font: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+div.container,
+.sidebar .logo {
+  display: flex;
+}
+
+.container .sidebar {
+  background: var(--fern-bg);
+  color: var(--secondary-color);
+  background-size: cover;
+  background-position: center;
+  width: 30%;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.sidebar .logo {
+  background-color: var(--transparent-bg);
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 150px;
+  width: 100%;
+  padding: 8px;
+}
+
+.sidebar .logo>img {
+  width: 5.5rem;
+  height: 7rem;
+}
+
+.sidebar .logo>h1 {
+  font-family: var(--logo-font);
+  font-size: 5rem;
+}
+
+.sidebar p {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 8px;
+}
+
+.sidebar p>a {
+  color: inherit;
 }
