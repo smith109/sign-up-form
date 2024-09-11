@@ -4,6 +4,7 @@
 }
 
 :root {
+  --primary-bg-color: #f9fafb;
   --secondary-color: #ffffff;
   --fern-bg: url(../img/fern.jpg) no-repeat;
   --transparent-bg: rgba(0, 0, 0, 0.464);
@@ -45,7 +46,7 @@ div.container,
   color: var(--secondary-color);
   background-size: cover;
   background-position: center;
-  width: 30%;
+  width: 50%;
   min-height: 100vh;
   position: relative;
   overflow: hidden;
@@ -81,4 +82,27 @@ div.container,
 
 .sidebar p>a {
   color: inherit;
+}
+
+.container .main {
+  background: var(--primary-bg-color);
+  display: flex;
+  flex-direction: column;
+  padding-top: 130px;
+  padding-left: 50px;
+}
+
+.main .info-section>p {
+  font-size: 1.5rem;
+  font-weight: 600;
+  width: clamp(45ch, 50%, 75ch);
+}
+
+.info-section p:last-child {
+  margin-top: 16px;
+  margin-bottom: 64px;
+}
+
+.info-section p>span {
+  font-style: italic;
 }
