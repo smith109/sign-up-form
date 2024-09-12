@@ -44,7 +44,7 @@
               </div>
               <div class="form-row">
                 <label for="pwd">Password</label>
-                <input type="password" name="pwd" id="pwd">
+                <input type="password" name="pwd" id="pwd" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$">
               </div>
             </div>
             <div class="form-col">
@@ -54,11 +54,11 @@
               </div>
               <div class="form-row">
                 <label for="phone-number">Phone Number</label>
-                <input type="tel" name="phone_number" id="phone-number">
+                <input type="tel" name="phone_number" id="phone-number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890">
               </div>
               <div class="form-row">
                 <label for="confirm-pwd">Confirm Password</label>
-                <input type="password" name="confirm_pwd" id="confirm-pwd">
+                <input type="password" name="confirm_pwd" id="confirm-pwd" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$">
               </div>
             </div>
           </div>
