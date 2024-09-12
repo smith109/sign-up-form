@@ -6,6 +6,10 @@
 :root {
   --primary-bg-color: #f9fafb;
   --secondary-color: #ffffff;
+  --color-default: #E5E7EB;
+  --color-invalid: #f64646;
+  --color-focus: #6e6ef6;
+  --accent-color: #596D48;
   --fern-bg: url(../img/fern.jpg) no-repeat;
   --transparent-bg: rgba(0, 0, 0, 0.464);
   --logo-font: norse-bold, sans-serif;
@@ -37,7 +41,9 @@ img {
 }
 
 div.container,
-.sidebar .logo {
+.sidebar .logo,
+form .input-container,
+.form-col .form-row {
   display: flex;
 }
 
@@ -58,7 +64,7 @@ div.container,
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 150px;
+  top: 200px;
   width: 100%;
   padding: 8px;
 }
@@ -86,14 +92,15 @@ div.container,
 
 .container .main {
   background: var(--primary-bg-color);
-  display: flex;
-  flex-direction: column;
-  padding-top: 130px;
+  padding-top: 112px;
+}
+
+.main>*>* {
   padding-left: 50px;
 }
 
 .main .info-section>p {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   font-weight: 600;
   width: clamp(45ch, 50%, 75ch);
 }
@@ -105,4 +112,50 @@ div.container,
 
 .info-section p>span {
   font-style: italic;
+}
+
+form>:not(div:last-of-type) {
+  background: var(--secondary-color);
+}
+
+form>h2 {
+  padding-top: 8px;
+  padding-bottom: 16px;
+}
+
+form .input-container {
+  gap: 90px;
+  box-shadow: 0px 5px 5px 0px #dcdcdc;
+}
+
+.form-col .form-row {
+  flex-direction: column;
+}
+
+.form-row>label {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: .9rem;
+  letter-spacing: .09rem;
+}
+
+.form-row input[type='text'],
+.form-row input[type='email'],
+.form-row input[type='tel'],
+.form-row input[type='password'] {
+  width: 250px;
+  border: 2px solid var(--color-default);
+  padding: 2px 10px;
+  margin-bottom: 16px;
+  outline: none;
+  border-radius: 4px;
+}
+
+.form-row>input:focus:invalid {
+  border: 2px solid var(--color-invalid);
+}
+
+.form-row>input:focus {
+  border: 2px solid var(--color-focus);
+  box-shadow: 0px 2px 3px #9d9d9d;
 }
