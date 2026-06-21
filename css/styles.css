@@ -8,6 +8,7 @@
 }
 
 :root {
+  --color-green: rgb(89, 109, 72);
   --color-white: rgb(255, 255, 255);
   --main-bg-color: rgb(243, 244, 246);
   --transparent-black: rgba(0, 0, 0, 0.5);
@@ -28,6 +29,11 @@ body {
   background-color: var(--main-bg-color);
 }
 
+input,
+button {
+  font: inherit;
+}
+
 body > .container {
   display: flex;
 }
@@ -45,7 +51,7 @@ body > .container {
 
 .sidebar > .logo-container {
   display: flex;
-  margin-top: 200px;
+  margin-top: 150px;
   align-items: center;
   justify-content: center;
   background-color: var(--transparent-black);
@@ -69,4 +75,100 @@ body > .container {
 
 .photo-credit a {
   color: inherit;
+}
+
+.container > .main-content {
+  flex: 1;
+}
+
+.main-content > * {
+  padding-left: 50px;
+}
+
+.main-content > .header {
+  margin-top: 100px;
+  max-width: 740px;
+}
+
+.header > p {
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.header > p > span {
+  font-style: italic;
+}
+
+.header p:first-child {
+  margin-bottom: 16px;
+}
+
+.header p:last-child {
+  margin-bottom: 32px;
+}
+
+.main-content > form {
+  padding-top: 8px;
+  margin-bottom: 32px;
+  padding-bottom: 32px;
+  background-color: var(--color-white);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+form > h2 {
+  margin-bottom: 8px;
+}
+
+form > .form-row {
+  display: flex;
+  gap: 100px;
+}
+
+.form-row label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: rgb(79, 79, 79);
+  letter-spacing: 0.11rem;
+  text-transform: uppercase;
+}
+
+label + input {
+  width: 250px;
+  padding: 0.15rem;
+  border-radius: 5px;
+  margin-bottom: 16px;
+  border: 2px solid rgb(229, 231, 235);
+}
+
+label + input:user-invalid {
+  border: 2px solid rgb(240, 44, 44);
+}
+
+label + input:focus {
+  border: 2px solid rgb(44, 96, 240);
+  box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.2);
+}
+
+.main-content > .button-container {
+  margin-bottom: 20px;
+}
+
+.button-container > button {
+  border: 0;
+  padding: 8px 42px;
+  border-radius: 5px;
+  color: var(--color-white);
+  background-color: var(--color-green);
+  box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.2);
+}
+
+.main-content > p {
+  font-size: 1.1rem;
+}
+
+.main-content > p > a {
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--color-green);
 }
